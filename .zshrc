@@ -13,6 +13,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+alias gs="git status"
+alias dev="git checkout develop"
+alias mas="git checkout master"
+
 gt() {
   dir=$1
   [[ ! $dir ]] && cd ~/src && ls && return
