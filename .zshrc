@@ -23,3 +23,11 @@ gt() {
   result=$(find ~/src/$dir* | head -1)
   [[ $result ]] && cd $result
 }
+
+export AWS_PROFILE=$(cat ~/.aws/env)
+chenv() {
+  env=$1
+  echo $env > ~/.aws/env
+  export AWS_PROFILE=$env
+  echo "Switch to $env"
+}
